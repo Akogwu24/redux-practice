@@ -1,15 +1,11 @@
-import store from "./store";
+// create a general react index.js and app.js and create new branches for all hook types
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-import { bugAdded, bugRemoved, bugResolved } from "./actionCreators";
-
-store.subscribe(() => {
-  console.log("store changed", store.getState());
-});
-
-store.dispatch(bugAdded("Bug1"));
-
-// store.dispatch(bugRemoved());
-
-store.dispatch(bugResolved(1));
-
-console.log(store.getState());
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
